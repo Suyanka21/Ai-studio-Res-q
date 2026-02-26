@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-base: #0A0A0A;
+  --color-surface: #121212;
+  --color-surface-raised: #1A1A1A;
+  --color-voltage: #FFA500;
+  --color-voltage-hover: #FFB733;
+  --color-voltage-pressed: #E69500;
+  --color-sos: #FF3D3D;
+  --color-safety: #00E676;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A0A0A0;
+  --color-text-tertiary: #6B6B6B;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Metal-morphic Utilities */
+.metal-surface {
+  background: #0A0A0A;
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.05), 4px 4px 10px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.metal-sunken {
+  background: #0A0A0A;
+  box-shadow: inset -4px -4px 10px rgba(255, 255, 255, 0.05), inset 4px 4px 10px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.reactor-well {
+  background: #0A0A0A;
+  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.8), inset -4px -4px 8px rgba(255,255,255,0.05);
+  border-radius: 9999px;
+  padding: 12px;
+  display: inline-flex;
+}
+
+.reactor-btn {
+  background: #0A0A0A;
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.05), 4px 4px 10px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+}
+
+.reactor-btn:active {
+  box-shadow: inset -4px -4px 10px rgba(255, 255, 255, 0.05), inset 4px 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.reactor-glow {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 61, 61, 0.15);
+  box-shadow: 0 0 20px rgba(255, 61, 61, 0.6);
+  border-radius: 9999px;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 30px rgba(255, 61, 61, 0.8); }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reactor-glow-voltage {
+  box-shadow: inset 0 0 10px rgba(255, 165, 0, 0.1), 0 0 15px rgba(255, 165, 0, 0.3);
+  border-color: rgba(255, 165, 0, 0.5);
+}
+
+.reactor-glow-sos {
+  box-shadow: inset 0 0 10px rgba(255, 61, 61, 0.1), 0 0 15px rgba(255, 61, 61, 0.3);
+  border-color: rgba(255, 61, 61, 0.5);
+}
+
+.text-glow-voltage {
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.text-glow-sos {
+  text-shadow: 0 0 10px rgba(255, 61, 61, 0.5);
+}
+
+.bg-map-tactical {
+  background-color: #050505;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
